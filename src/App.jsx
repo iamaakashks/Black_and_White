@@ -1,25 +1,20 @@
-import React from 'react'
-import { useState } from 'react';
+import React, { useState } from 'react'
+import { Header } from '../components/Header.jsx'
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [count, setcount] = useState(0);
+  function post() {
+    setcount(prev => prev+1)
+    console.log("hello count: " + count);
+  }
+  const day = 30;
   return (
     <div className="w-full min-h-screen bg-zinc-900 text-white px-16 pt-6">
-      <div className='w-full flex items-center gap-10 text-md'>
-        <h1 className='tracking-wider font-thin text-2xl'>Black&White</h1>
-        <div className='bg-zinc-700 flex-1 flex justify-end gap-10 py-6 rounded-full px-10'>
-          <button>Home</button>
-          <button>Schedule</button>
-          <button>About</button>
-          <button>Contact</button>
-        </div>
-        <div className={`${!loggedIn? 'block' : 'hidden'} flex items-center gap-10 py-6`}>
-          <button className=''>Login</button>
-          <button>Button</button>
-        </div>
-        <button className={`${loggedIn? 'block' : 'hidden'}`}>
-          <span className='material-symbols-outlined'>account_circle</span>
-        </button>
+      <Header />
+      <br />
+      <div className='w-full bg-zinc-700 flex items-center gap-4'>
+        <div className={`w-40 h-40 border-[1px] border-zinc-900 rounded-md ${count&&'bg-green-600'}`}></div>
+        <button onClick={post} className="px-3 py-1.5 border-[1px] rounded-md">Post {count}</button>
       </div>
     </div>
   )
