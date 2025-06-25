@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export function Header() {
       const [loggedIn, setLoggedIn] = useState(true);
@@ -7,9 +8,9 @@ export function Header() {
         <div className='w-full flex items-center gap-10 text-md'>
             <h1 className='tracking-wider font-thin text-2xl'>Black&White</h1>
             <div className='bg-zinc-700 flex-1 flex justify-end gap-10 py-6 rounded-full px-10'>
-            <button>Home</button>
+            <Link to="/">Home</Link>
             <button>Schedule</button>
-            <button>About</button>
+            <Link to="/about">About</Link>
             <button>Contact</button>
             </div>
             {
