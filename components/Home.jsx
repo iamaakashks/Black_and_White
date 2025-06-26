@@ -1,6 +1,8 @@
 import React from "react";
 import {Header} from './Header.jsx'
 import {Tracker} from './Tracker.jsx'
+import { About } from "./About.jsx";
+import Footer from "./Footer.jsx";
 
 export function Home() {
     return (
@@ -8,6 +10,10 @@ export function Home() {
             <Header />
             <br />
             <Tracker />
+            <br/>
+            <About />
+            <br/>
+            <Footer />
         </div>
     )
 }
