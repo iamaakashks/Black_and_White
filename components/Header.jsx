@@ -21,7 +21,7 @@ export function Header() {
             ) : (
                 <div className={`flex items-center gap-10 py-6`}>
                 <button onClick={()=>setLoggedIn(true)} className=''>Login</button>
-                <button>Signup</button>
+                <Link to="/signup">Signup</Link>
                 </div>
             )
             }
